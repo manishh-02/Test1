@@ -5,8 +5,7 @@ const app = express();
 app.get("/run", (req, res) => {
   const code = req.query.code;
 
-  const result = eval(code); // unsafe eval
-  res.send(String(result));
+  res.status(400).send("Evaluation disabled for security reasons");
 });
 
 app.listen(3000);
